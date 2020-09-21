@@ -1,22 +1,33 @@
+
+#define Team1_Go Baseline_Go
+#define Team2_Go TeamName_Go //这里换成参赛的队伍的函数名
+
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
-
-#include "Player/baseline.h"
+#include "state.h"
+#include "Player/Baseline.h"
 #include "MapManager.h"
 #include "Player/Teamname.h"
 
-using namespace std ;
-
+using namespace std;
+int cangolist[32][2];
 int main()
 {
-    
-    
-    Team1 t ;
-    t.asd();
-    system("pause");
-    
-   
-    
-    return 0 ;
+
+    MapManger_Init();
+    int currentplayer = BLACK;
+    while (!MapManager_GameFinished)
+    {
+        int ret[2] = {0, 0};
+        int cangolength = MapManager_GetCanGoList(currentplayer, cangolist);
+        if (currentplayer == BLACK)
+            Team1_Go(BLACK, map, cangolist, cangolength, ret);
+        else
+            Team2_Go(WHITE, map, cangolist, cangolength, ret);
+
+        MapManager_Step(currentplayer, ret[0], ret[1]);
+    }
+
+    return 0;
 }
