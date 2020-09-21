@@ -14,15 +14,7 @@ using namespace std;
 int cangolist[32][2];
 int main()
 {
-
     MapManger_Init();
-
-
-
-
-
-
-
     
     int currentplayer = BLACK;
     while (!MapManager_GameFinished)

@@ -11,5 +11,5 @@
 //否则游戏结束，GaneFinished置位
 int MapManager_Step(int player, int x, int y)
 {
-    
+    return 0;
 }
