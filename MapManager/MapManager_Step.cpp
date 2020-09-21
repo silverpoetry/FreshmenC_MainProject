@@ -1,5 +1,4 @@
 #include "MapManager.h"
-#include "../state.h"
 
 //传入棋手和下棋位置，如果下棋位置不合法，游戏结束
 //更新棋盘

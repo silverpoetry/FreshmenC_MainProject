@@ -1,5 +1,4 @@
 #include "MapManager.h"
-#include "../state.h"
 
 //获取下棋位置列表
 //player：黑骑或者白漆
