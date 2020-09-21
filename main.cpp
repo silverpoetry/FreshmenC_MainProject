@@ -26,7 +26,7 @@ int main()
         else
             Team2_Go(WHITE, map, cangolist, cangolength, ret);
 
-        MapManager_Step(currentplayer, ret[0], ret[1]);
+        currentplayer = MapManager_Step(currentplayer, ret[0], ret[1]);
     }
 
     return 0;
