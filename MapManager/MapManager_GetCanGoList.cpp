@@ -7,5 +7,5 @@
 //返回值 ：列表长度，存储从0开始
 int MapManager_GetCanGoList(int player, int ret[32][2])
 {
-
+    return 0;
 }
