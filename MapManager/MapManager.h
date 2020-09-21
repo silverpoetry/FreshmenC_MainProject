@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 #include "../state.h"
 
 //文件读写采用stdio，在main里面freopen
