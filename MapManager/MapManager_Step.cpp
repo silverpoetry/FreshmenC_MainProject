@@ -8,7 +8,4 @@
 //如果为空，获得本家列表
 //如果本家还能下，本家继续
 //否则游戏结束，GaneFinished置位
-int MapManager_Step(int player, int x, int y)
-{
-    return 0;
-}
+int MapManager_Step(int player, int x, int y) { return !player; }
