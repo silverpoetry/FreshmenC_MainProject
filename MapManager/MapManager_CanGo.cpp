@@ -1,5 +1,4 @@
 #include "MapManager.h"
-//#include <cstdio>
 
 struct Direction {
   int x;
@@ -12,8 +11,8 @@ struct Point {
 };
 
 int queryMap(struct Point);
-bool is_CanGo(int player, struct Point, struct Direction);
-bool is_CanGo2(int player, struct Point, struct Direction);
+bool is_CanGo(int player, struct Point, struct Direction);//the first point should be {!player}
+bool is_CanGo2(int player, struct Point, struct Direction);//the last point should be {player}
 struct Point nextPoint(struct Point, struct Direction);
 
 //判断某位置是否能走棋
@@ -46,7 +45,7 @@ bool MapManager_CanGo(int player, unsigned int x, unsigned int y) {
     }
   }
 
-  return false; // should never be reached
+  return false;
 }
 
 bool is_CanGo(int player, struct Point point, struct Direction direction) {
