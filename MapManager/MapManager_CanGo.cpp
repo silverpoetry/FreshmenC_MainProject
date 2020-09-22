@@ -1,4 +1,5 @@
 #include "MapManager.h"
+//#include <cstdio>
 
 struct Direction {
   int x;
@@ -78,9 +79,10 @@ struct Point nextPoint(struct Point point, struct Direction direction) {
 
 int queryMap(struct Point point) {
   unsigned int x = point.x, y = point.y;
-  if (x >= 0 && x <= 9 && y >= 0 && y <= 9) {
+  if (x <= 9 && y <= 9) {
     return MapManager_Map[x][y];
   } else {
+    printf("this code should never be reached: means the query is out of map");
     return -1;
   }
 }
