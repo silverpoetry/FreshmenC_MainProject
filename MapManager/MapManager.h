@@ -32,7 +32,7 @@ int MapManager_Step(int player, int x, int y);
 int MapManager_GetCanGoList(int player, int ret[32][2]);
 
 //判断某位置是否能走棋
-bool MapManager_CanGo(int player, int x, int y);
+bool MapManager_CanGo(int player,unsigned int x,unsigned int y);
 
 //落子并完成地图的翻转
 void MapManager_Reverse(int player, int x, int y);
