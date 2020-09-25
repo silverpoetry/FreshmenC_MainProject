@@ -11,6 +11,7 @@ struct Point {
   unsigned int y;
 };
 
+
 int queryMap(const struct Point);
 bool is_CanGo(const int player, const struct Point,
               const struct Direction); // the first point should be {!player}
@@ -18,7 +19,7 @@ bool is_CanGo2(const int player, const struct Point,
                const struct Direction); // the last point should be {player}
 struct Point nextPoint(const struct Point, const struct Direction);
 
-//�ж�ĳλ���Ƿ�������
+//ÅÐ¶ÏÄ³Î»ÖÃÊÇ·ñÄÜ×ßÆå
 bool MapManager_CanGo(const int player, const unsigned int x,
                       const unsigned int y) {
 
@@ -97,5 +98,6 @@ int queryMap(const struct Point point) {
   } else {
     printf("this code should never be reached: the query is out of map");
     exit(1);
+
   }
 }
