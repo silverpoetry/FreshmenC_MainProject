@@ -1,4 +1,5 @@
 #include "MapManager.h"
+#include <cstdlib>
 
 struct Direction {
   int x;
@@ -10,13 +11,16 @@ struct Point {
   unsigned int y;
 };
 
-int queryMap(struct Point);
-bool is_CanGo(int player, struct Point, struct Direction);//the first point should be {!player}
-bool is_CanGo2(int player, struct Point, struct Direction);//the last point should be {player}
-struct Point nextPoint(struct Point, struct Direction);
+int queryMap(const struct Point);
+bool is_CanGo(const int player, const struct Point,
+              const struct Direction); // the first point should be {!player}
+bool is_CanGo2(const int player, const struct Point,
+               const struct Direction); // the last point should be {player}
+struct Point nextPoint(const struct Point, const struct Direction);
 
 //判断某位置是否能走棋
-bool MapManager_CanGo(int player, unsigned int x, unsigned int y) {
+bool MapManager_CanGo(const int player, const unsigned int x,
+                      const unsigned int y) {
 
   if (x >= 9 || y >= 9 || x == 0 || y == 0) {
     return false;
@@ -30,7 +34,7 @@ bool MapManager_CanGo(int player, unsigned int x, unsigned int y) {
       return true;
     }
     if (direction.x == 1 && direction.y == 1) {
-      break;
+      return false;
     }
 
     // next direction
@@ -48,7 +52,8 @@ bool MapManager_CanGo(int player, unsigned int x, unsigned int y) {
   return false;
 }
 
-bool is_CanGo(int player, struct Point point, struct Direction direction) {
+bool is_CanGo(const int player, const struct Point point,
+              const struct Direction direction) {
   if (queryMap(point) != BLANK) {
     return false;
   }
@@ -59,7 +64,8 @@ bool is_CanGo(int player, struct Point point, struct Direction direction) {
   return is_CanGo2(player, tmpPoint, direction);
 }
 
-bool is_CanGo2(int player, struct Point point, struct Direction direction) {
+bool is_CanGo2(const int player, const struct Point point,
+               const struct Direction direction) {
   struct Point tmpPoint = nextPoint(point, direction);
   int tmp = queryMap(tmpPoint);
   if (tmp == BLANK) {
@@ -71,17 +77,25 @@ bool is_CanGo2(int player, struct Point point, struct Direction direction) {
   }
 }
 
-struct Point nextPoint(struct Point point, struct Direction direction) {
-  struct Point ret = {point.x + direction.x, point.y + direction.y};
-  return ret;
+struct Point nextPoint(const struct Point point,
+                       const struct Direction direction) {
+  int x = point.x + direction.x;
+  int y = point.y + direction.y;
+  if (x >= 0 && y >= 0) {
+    struct Point ret = {(unsigned int)x, (unsigned int)y};
+    return ret;
+  } else {
+    printf("error: point extendind out of map");
+    exit(1);
+  }
 }
 
-int queryMap(struct Point point) {
+int queryMap(const struct Point point) {
   unsigned int x = point.x, y = point.y;
   if (x <= 9 && y <= 9) {
     return MapManager_Map[x][y];
   } else {
-    printf("this code should never be reached: means the query is out of map");
-    return -1;
+    printf("this code should never be reached: the query is out of map");
+    exit(1);
   }
 }
