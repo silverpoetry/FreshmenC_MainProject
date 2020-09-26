@@ -1,4 +1,5 @@
-
+#include <stdio.h>
+#include "../state.h"
 
 //文件读写采用stdio，在main里面freopen
 
@@ -31,10 +32,10 @@ int MapManager_Step(int player, int x, int y);
 int MapManager_GetCanGoList(int player, int ret[32][2]);
 
 //判断某位置是否能走棋
-bool MapManager_CanGo(int player, int x, int y);
+bool MapManager_CanGo(int player,unsigned int x,unsigned int y);
 
 //落子并完成地图的翻转
-void MapManager_Reverse(int player ,int x,int y);
+void MapManager_Reverse(int player, int x, int y);
 
 //数黑白棋子数，判断胜负，写入文件
 void Mapmanager_GameOver();
