@@ -15,6 +15,8 @@ int cangolist[64][2];
 int main()
 {
     MapManger_Init();
+    freopen("match1.txt","w",stdout);
+    printf("%s %s \n","超级AI","白棋队");
 
     int currentplayer = BLACK;
     while (!MapManager_GameFinished)
@@ -28,6 +30,8 @@ int main()
 
         currentplayer = MapManager_Step(currentplayer, ret[0], ret[1]);
     }
+   //输出赢家
+    printf("%d \n",MapManager_GameWinner);
 
     return 0;
 }

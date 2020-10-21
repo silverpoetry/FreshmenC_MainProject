@@ -1,6 +1,6 @@
 #include "MapManager.h"
 
-int MapManager_Map[10][10];
+int MapManager_Map[12][12];
 bool MapManager_GameFinished;
 bool MapManager_GameWinner;
 
@@ -18,5 +18,5 @@ void MapManger_Init()
     MapManager_Map[mid][mid] = WHITE;
     MapManager_Map[mid+1][mid+1] = WHITE;
     MapManager_Map[mid][mid+1] = BLACK;
-    MapManager_Map[mid+1][mid] = WHITE;
+    MapManager_Map[mid+1][mid] = BLACK;
 }
