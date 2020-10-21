@@ -11,10 +11,12 @@
 #include "Player/Teamname.h"
 
 using namespace std;
-int cangolist[32][2];
+int cangolist[64][2];
 int main()
 {
     MapManger_Init();
+    freopen("match1.txt","w",stdout);
+    printf("%s %s \n","超级AI","白棋队");
 
     int currentplayer = BLACK;
     while (!MapManager_GameFinished)
@@ -24,10 +26,12 @@ int main()
         if (currentplayer == BLACK)
             Team1_Go(BLACK, MapManager_Map, cangolist, cangolength, ret);
         else
-            Team2_Go(WHITE, MapManager_Map, cangolist, cangolength, ret);
+            Team2_Go(WHITE, MapManager_Map, ret);
 
         currentplayer = MapManager_Step(currentplayer, ret[0], ret[1]);
     }
+   //输出赢家
+    printf("%d \n",MapManager_GameWinner);
 
     return 0;
 }

@@ -20,7 +20,7 @@ bool is_CanGo2(const int player, const struct Point,
 struct Point nextPoint(const struct Point, const struct Direction);
 
 
-//ÅÐ¶ÏÄ³Î»ÖÃÊÇ·ñÄÜ×ßÆå
+
 bool MapManager_CanGo(const int player, const unsigned int x,
                       const unsigned int y) {
 
