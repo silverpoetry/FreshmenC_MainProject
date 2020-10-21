@@ -17,5 +17,5 @@ void MapManger_Init()
     MapManager_Map[4][4] = WHITE;
     MapManager_Map[5][5] = WHITE;
     MapManager_Map[4][5] = BLACK;
-    MapManager_Map[5][4] = WHITE;
+    MapManager_Map[5][4] = BLACK;
 }
