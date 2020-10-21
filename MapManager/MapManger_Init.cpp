@@ -7,15 +7,16 @@ bool MapManager_GameWinner;
 void MapManger_Init()
 {
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < ColNumber; i++)
     {
-        for (int j = 0; j < 10; j++)
+        for (int j = 0; j < RowNumber; j++)
         {
             MapManager_Map[i][j] = BLANK;
         }
     }
-    MapManager_Map[4][4] = WHITE;
-    MapManager_Map[5][5] = WHITE;
-    MapManager_Map[4][5] = BLACK;
-    MapManager_Map[5][4] = WHITE;
+    int mid =ColNumber/2;
+    MapManager_Map[mid][mid] = WHITE;
+    MapManager_Map[mid+1][mid+1] = WHITE;
+    MapManager_Map[mid][mid+1] = BLACK;
+    MapManager_Map[mid+1][mid] = WHITE;
 }

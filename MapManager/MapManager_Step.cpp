@@ -8,4 +8,26 @@
 //如果为空，获得本家列表
 //如果本家还能下，本家继续
 //否则游戏结束，GaneFinished置位
-int MapManager_Step(int player, int x, int y) { return !player; }
+int cglst[64][2] ;
+int MapManager_Step(int player, int x, int y)
+{
+    //吓到不该下的地方，对方赢
+    if(!MapManager_CanGo(player,x,y))
+    {
+        MapManager_GameFinished=true;
+        MapManager_GameWinner=!player; 
+        return 0 ;
+    }
+
+    //下到可以下的地方
+    //更新棋盘并写入
+    MapManager_Reverse(player,x,y);
+    if(MapManager_GetCanGoList(!player,cglst))  return !player;
+    if(MapManager_GetCanGoList(player,cglst))  return player;
+    Mapmanager_GameOver();
+    return player;
+
+    
+
+  
+}

@@ -1,5 +1,5 @@
 #include "Teamname.h"
-
+#include "..\state.h"
 void TeamName_Go(const int player, const int map[10][10], int ret[2])
 {
   //  ret[0] = cangolist[0][0];
