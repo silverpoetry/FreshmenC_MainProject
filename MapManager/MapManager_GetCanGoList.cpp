@@ -1,11 +1,23 @@
 #include "MapManager.h"
-#include "../state.h"
 
-//»ñÈ¡ÏÂÆåÎ»ÖÃÁĞ±í
-//player£ººÚÆï»òÕß°×Æá
-//ret ·µ»Ø×ø±êµÄ¶şÎ¬Êı×é
-//·µ»ØÖµ £ºÁĞ±í³¤¶È£¬´æ´¢´Ó0¿ªÊ¼
+#define RowNumber 8
+#define ColNumber 8
+
+//è·å–ä¸‹æ£‹ä½ç½®åˆ—è¡¨
+//playerï¼šé»‘éª‘æˆ–è€…ç™½æ¼†
+//ret è¿”å›åæ ‡çš„äºŒç»´æ•°ç»„
+//è¿”å›å€¼ ï¼šåˆ—è¡¨é•¿åº¦ï¼Œå­˜å‚¨ä»0å¼€å§‹
 int MapManager_GetCanGoList(int player, int ret[32][2])
 {
-
+    int ListLength = 0 ;
+    for (int i = 1; i <= RowNumber; ++i){
+        for (int j = 1; j <= ColNumber; ++j){
+            if(MapManager_CanGo(player, i, j)){
+                ret[ListLength][0]=i;
+                ret[ListLength][1]=j;
+                ListLength++;
+            }
+        }
+    }
+    return ListLength;
 }
