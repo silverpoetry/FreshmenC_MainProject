@@ -6,7 +6,7 @@ bool is_CanGo(int player, int x, int y, int i, int y);
 
 bool MapManager_CanGo(const int player, const unsigned int x,
                       const unsigned int y) {
-  if (x >= 9 || y >= 9 || x == 0 || y == 0) {
+  if (x >= ColNumber || y >= RowNumber || x == 0 || y == 0) {
     return false;
   }
   for (int i = -1; i <= 1; i++) {
