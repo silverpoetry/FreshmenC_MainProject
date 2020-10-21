@@ -2,22 +2,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-bool is_CanGo(int player, int x, int y, int i, int y);
-
-struct Point {
-  unsigned int x;
-  unsigned int y;
-};
-
-
-int queryMap(const struct Point);
-bool is_CanGo(const int player, const struct Point,
-              const struct Direction); // the first point should be {!player}
-bool is_CanGo2(const int player, const struct Point,
-               const struct Direction); // the last point should be {player}
-struct Point nextPoint(const struct Point, const struct Direction);
-
-
+bool is_CanGo(int player, int x, int y, int i, int j);
 
 bool MapManager_CanGo(const int player, const unsigned int x,
                       const unsigned int y) {
