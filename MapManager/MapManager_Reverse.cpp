@@ -5,7 +5,7 @@ int dir[8][2]={{0,1},{0,-1},{1,0},{-1,0},{1,1},{1,-1},{-1,1},{-1,-1}};
 //判断在棋盘内
 bool In_Range(int x,int y)
 {
-  return (1<=x && x<=8 && 1<=y && y<=8);
+  return (1<=x && x<=ColNumber && 1<=y && y<=RowNumber);
 }
 
 //翻转操作
