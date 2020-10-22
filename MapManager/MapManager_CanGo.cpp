@@ -16,11 +16,17 @@ bool MapManager_CanGo(const int player, const unsigned int x,
       }
       if (MapManager_Map[x][y] == BLANK &&
           MapManager_Map[x + i][y + j] == !player) {
-        return is_CanGo(player, x + i, y + j, i, j);
+        if (is_CanGo(player, x + i, y + j, i, j)) {
+          return true;
+        } else {
+          continue;
+        }
+      } else {
+        return false;
       }
-      return false;
     }
   }
+  return false;
 }
 
 bool is_CanGo(int player, int x, int y, int i, int j) {
