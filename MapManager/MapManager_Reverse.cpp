@@ -7,7 +7,10 @@ void MapManager_Reverse(int player, int x, int y)
   for(int i=0;i<8;i++)
   {
     int Reverse_Step=1;
-    int Reverse_Position_x=x+Reverse_Step_x*dir[i][0], Reverse_Position_y=y+Reverse_Step_y*dir[i][1];
-    while()
+    int Reverse_x=x+Reverse_Step*dir[i][0], Reverse_y=y+Reverse_Step*dir[i][1];
+    while(In_Range(Reverse_x,Reverse_y))
+    {
+      if(MapManager_Map[Reverse_x][Reverse_y])
+    }
   }
 }
