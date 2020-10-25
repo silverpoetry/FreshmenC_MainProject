@@ -12,6 +12,7 @@ struct Point {
 };
 
 
+
 int queryMap(const struct Point);
 bool is_CanGo(const int player, const struct Point,
               const struct Direction); // the first point should be {!player}
