@@ -7,9 +7,9 @@ bool MapManager_GameWinner;
 void MapManger_Init()
 {
 
-    for (int i = 0; i < ColNumber; i++)
+    for (int i = 0; i <= ColNumber+1; i++)
     {
-        for (int j = 0; j < RowNumber; j++)
+        for (int j = 0; j <= RowNumber+1; j++)
         {
             MapManager_Map[i][j] = BLANK;
         }

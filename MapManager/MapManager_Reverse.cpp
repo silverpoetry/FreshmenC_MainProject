@@ -12,7 +12,7 @@ bool In_Range(int x,int y)
 void Reverse(int x,int y,int xe,int ye,int d)
 {
   int Reverse_x=x+dir[d][0], Reverse_y=y+dir[d][1];
-  while(Reverse_x!=xe && Reverse_y!=ye)
+  while(!(Reverse_x==xe && Reverse_y==ye))
   {
     MapManager_Map[Reverse_x][Reverse_y]^=1;
     Reverse_x+=dir[d][0];

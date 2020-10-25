@@ -24,6 +24,7 @@ int MapManager_Step(int player, int x, int y)
 
     //下到可以下的地方
     //更新棋盘并写入
+    MapManager_Map[x][y]=player;
     MapManager_Reverse(player, x, y);
     PrintMap(player, x, y);
     if (MapManager_GetCanGoList(!player, cglst))
